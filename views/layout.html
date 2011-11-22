@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="{% block description %}{{ defaultDescription }}{% endblock %}" lang="es">
+        
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/style/reset.css" type="text/css">
+        <link rel="stylesheet" href="/style/estilos.css" type="text/css">
+        <link rel="stylesheet" href="/js/lib/tipsy-0.1.7/src/stylesheets/tipsy.css" type="text/css">
+        {% block css %}{% endblock %}
+        
+        <title>{{ seccion }} | {{ siteName }}</title>
+    </head>
+	
+    <body id="{{ seccion|lower|url_encode() }}">
+        
+        <!-- CARGAR SECCIÓN -->
+        {% block content %}{% endblock %}
+        <!-- FIN CARGAR SECCION -->
+
+        <!-- LIBRERÍAS JAVASCRIPT -->
+        <script src="/js/lib/jquery-1.6.4.min.js"></script>
+        <script src="/js/lib/tipsy-0.1.7/src/javascripts/jquery.tipsy.js"></script>
+        <script src="/js/layout.js"></script>
+        {% block js %}{% endblock %}
+        <!-- FIN LIBRERÍAS JAVASCRIPT -->
+        
+    </body>
+    
+</html>
